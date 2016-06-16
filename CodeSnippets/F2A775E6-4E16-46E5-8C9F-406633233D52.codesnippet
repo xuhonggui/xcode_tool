@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>hg_macro</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/// 常用宏定义
+#define kUserDefaults       [NSUserDefaults standardUserDefaults]
+
+#define kNotificationCenter [NSNotificationCenter defaultCenter]
+
+#define kApplication        [UIApplication sharedApplication]
+
+#define kAppDelegate        (AppDelegate *)[[UIApplication sharedApplication] delegate]
+
+#define kFileManager        [NSFileManager defaultManager]
+
+#define kBundle             [NSBundle mainBundle]
+
+#define kDevice             [UIDevice currentDevice]
+
+#define kWindow             [[UIApplication sharedApplication] keyWindow]
+
+#define kInfoDictionary     [[NSBundle mainBundle] infoDictionary]
+
+#define kBundleVersion      [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+#define kDocumentPath       [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+#define kCachesDirectoryPath [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+
+#define kBundleLoadNibName(name) [[[NSBundle mainBundle] loadNibNamed:name owner:nil options:nil] lastObject]
+
+#define kDispatch_Global(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)
+
+#define KDispatch_Main(block) dispatch_async(dispatch_get_main_queue(),block)
+
+#define kFMUser [FMUserInfo sharedInstance].user
+
+#define kNetWorkingTool [FMNetWorkingTool sharedInstance]
+
+#define kNetworkReachability [AFNetworkReachabilityManager sharedManager]
+
+#define WEAK_SELF()  __weak __typeof(self) weakSelf = self;
+
+#define kYUmengBeginPage(page) [MobClick beginLogPageView:page]
+
+#define kYUmengEndPage(page) [MobClick endLogPageView:page]
+
+//UIImage
+#define FMImage(name) [UIImage imageNamed:name]
+
+//屏幕的宽、高
+#define SCREEN_W ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_H ([UIScreen mainScreen].bounds.size.height)
+#define NAVIGATION_H 44
+#define TABBAR_H 49
+#define STATUSBAR_H 20
+#define MARGIN 10
+
+//判断iPhone型号
+#define isiPhone4  (SCREEN_H == 480)
+#define isiPhone5  (SCREEN_H == 568)
+#define isiPhone6  (SCREEN_H == 667)
+#define isiPhone6P (SCREEN_H == 736)
+
+
+//判断系统版本
+#define IOS_VERSION_6_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 6.0)
+#define IOS_VERSION_7_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 7.0)
+#define IOS_VERSION_8_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 8.0)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F2A775E6-4E16-46E5-8C9F-406633233D52</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>hg_macro</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
