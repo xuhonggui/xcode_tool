@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>hg_macro</string>
+	<string>hg_macro_define</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>TopLevel</string>
@@ -73,13 +73,28 @@
 //判断系统版本
 #define IOS_VERSION_6_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 6.0)
 #define IOS_VERSION_7_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 7.0)
-#define IOS_VERSION_8_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 8.0)</string>
+#define IOS_VERSION_8_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] &gt;= 8.0)
+
+/* 
+ 打印
+ __func__ 打印方法名 c字符串
+ __LINE__ 打印行数
+ ## "##"放在","和参数之间，那么如果参数留空的话，那么"##"前面的","就会删掉，从而防止编译错误。
+ ((void)0) 在C、C++中表示无任何操作（详见http://stackoverflow.com/questions/2198950/why-is-void-0-a-no-operation-in-c-and-c）
+ */
+#ifdef DEBUG
+//#define FMLog(...) NSLog(__VA_ARGS__)/* 不打印方法名、行数 */
+#define FMLog(format, ...) NSLog((@"%s(%d)"format), __func__, __LINE__, ##__VA_ARGS__)
+#else
+#define FMLog(...) ((void)0)
+#endif
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F2A775E6-4E16-46E5-8C9F-406633233D52</string>
+	<string>71FAD7F2-CF4B-436A-BBA9-CA78EC740361</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>hg_macro</string>
+	<string>hg_macro_define</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
