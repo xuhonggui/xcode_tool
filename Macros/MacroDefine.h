@@ -75,6 +75,18 @@
 #define IOS_VERSION_7_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define IOS_VERSION_8_OR_ABOVE ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
+//类型转换
+#define kIntToString(_i) [NSString stringWithFormat:@"%d", _i]
+#define kFloatToString(_f) [NSString stringWithFormat:@"%f", _f]
+#define kDoubleToString(_g) [NSString stringWithFormat:@"%g", _g]
+
+//包装
+#define NSNumWithUnsignedInteger(u)             ([NSNumber numberWithUnsignedInteger:u])
+#define NSNumWithInt(i)                         ([NSNumber numberWithInt:i])
+#define NSNumWithInteger(i)                     ([NSNumber numberWithInteger:i])
+#define NSNumWithFloat(f)                       ([NSNumber numberWithFloat:f])
+#define NSNumWithBool(b)                        ([NSNumber numberWithBool:b])
+
 /* 
  打印
  __func__ 打印方法名 c字符串
